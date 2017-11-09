@@ -26,12 +26,17 @@
       <name>Juozas Rimsa</name>
       <organizationUrl>https://github.com/iata-ndc</organizationUrl>
     </developer>
+    <developer>
+      <name>Ricardo Gaete</name>
+      <organizationUrl>https://github.com/rgaete</organizationUrl>
+    </developer>
   </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!--<api.key>insert your api key here or specify system property when running integration tests</api.key>-->
     <test.server.url>http://iata.api.mashery.com/kronos/api</test.server.url>
+    <schemas.version>v15.2</schemas.version>
   </properties>
 
   <distributionManagement>
@@ -86,14 +91,17 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.3</version>
           <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
+            <source>1.8</source>
+            <target>1.8</target>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.jvnet.jaxb2.maven2</groupId>
           <artifactId>maven-jaxb2-plugin</artifactId>
           <version>0.12.3</version>
+          <configuration>
+            <schemaDirectory>src/main/resources/${schemas.version}</schemaDirectory>
+          </configuration>
           <executions>
             <execution>
               <goals>
@@ -107,7 +115,7 @@
                   <arg>-no-header</arg>
                   <arg>-Xxew</arg>
                   <arg>-Xxew:instantiate lazy</arg>
-                  <arg>-Xxew:control ${basedir}/src/main/resources/xev_control</arg>
+                  <arg>-Xxew:control ${basedir}/src/main/resources/${schemas.version}/xev_control</arg>
                 </args>
                 <plugins>
                   <plugin>
