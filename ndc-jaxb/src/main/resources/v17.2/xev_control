@@ -1,0 +1,5 @@
+org.iata.ndc.schema._2017_2.OfferValidPeriodType=exclude
+org.iata.ndc.schema._2017_2.SeatComponentType.Locations.Location.Space.ColumnRange=exclude
+org.iata.ndc.schema._2017_2.ServiceBundleType.Selection=exclude
+org.iata.ndc.schema._2017_2.ListOfServiceBundleType.ServiceBundle.Selection=exclude
+org.iata.ndc.schema._2017_2.OrderItemType=exclude
