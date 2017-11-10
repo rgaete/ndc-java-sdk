@@ -1,13 +1,14 @@
-package org.iata.ndc.builder;
+package org.iata.ndc._2015_2.builder;
 
-import org.iata.ndc.ClientException;
-import org.iata.ndc.builder.element.PartyBuilder;
+import org.iata.ndc._2015_2.ClientException;
+import org.iata.ndc._2015_2.builder.element.PartyBuilder;
 import org.iata.ndc.schema._2015_2.*;
-import org.iata.ndc.schema._2015_2.AirShopReqAttributeQueryTypeOriginDestination.CalendarDates;
 import org.iata.ndc.schema._2015_2.FarePreferencesType.Type;
-import org.iata.ndc.schema._2015_2.FlightDepartureType.AirportCode;
 import org.iata.ndc.schema._2015_2.MsgPartiesType.Sender;
-import org.iata.ndc.schema._2015_2.TravelerCoreType.PTC;
+import org.iata.ndc.schema._2015_2.AirShopReqAttributeQueryTypeOriginDestination;
+import org.iata.ndc.schema._2015_2.AirShoppingRQ;
+import org.iata.ndc.schema._2015_2.MsgPartiesType;
+import org.iata.ndc.schema._2015_2.ObjectFactory;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeConstants;
@@ -188,14 +189,14 @@ public class AirShoppingRQBuilder {
     public AirShoppingRQBuilder addOriginDestination(String origin, String destination, Date date, int daysBefore, int daysAfter) {
         AirShopReqAttributeQueryTypeOriginDestination originDestination = Initializer.getObject(AirShopReqAttributeQueryTypeOriginDestination.class);
 
-        AirportCode airportCode = factory.createFlightDepartureTypeAirportCode();
+        FlightDepartureType.AirportCode airportCode = factory.createFlightDepartureTypeAirportCode();
         originDestination.getDeparture().setAirportCode(airportCode);
         originDestination.getDeparture().getAirportCode().setValue(origin);
         originDestination.getArrival().getAirportCode().setValue(destination);
         originDestination.getDeparture().setDate(getDate(date));
 
         if (daysBefore != 0 || daysAfter != 0) {
-            CalendarDates dates = factory.createAirShopReqAttributeQueryTypeOriginDestinationCalendarDates();
+            AirShopReqAttributeQueryTypeOriginDestination.CalendarDates dates = factory.createAirShopReqAttributeQueryTypeOriginDestinationCalendarDates();
             dates.setDaysBefore(daysBefore);
             dates.setDaysAfter(daysAfter);
             originDestination.setCalendarDates(dates);
@@ -271,7 +272,7 @@ public class AirShoppingRQBuilder {
             cabin.setCode(code);
             cabinPreferencesType.getCabinType().add(cabin);
         }
-        org.iata.ndc.schema._2015_2.AirShoppingRQ.Preference preferenceElement = factory.createAirShoppingRQPreference();
+        AirShoppingRQ.Preference preferenceElement = factory.createAirShoppingRQPreference();
         preferenceElement.setCabinPreferences(cabinPreferencesType);
         request.getPreferences().add(preferenceElement);
     }
@@ -286,7 +287,7 @@ public class AirShoppingRQBuilder {
             type.setCode(code);
             farePreferences.getTypes().add(type);
         }
-        org.iata.ndc.schema._2015_2.AirShoppingRQ.Preference preferenceElement = factory.createAirShoppingRQPreference();
+        AirShoppingRQ.Preference preferenceElement = factory.createAirShoppingRQPreference();
         preferenceElement.setFarePreferences(farePreferences);
         request.getPreferences().add(preferenceElement);
     }
@@ -303,7 +304,7 @@ public class AirShoppingRQBuilder {
             airline.setAirlineID(airlineID);
             airlinePreferences.getAirline().add(airline);
         }
-        org.iata.ndc.schema._2015_2.AirShoppingRQ.Preference preferenceElement = factory.createAirShoppingRQPreference();
+        AirShoppingRQ.Preference preferenceElement = factory.createAirShoppingRQPreference();
         preferenceElement.setAirlinePreferences(airlinePreferences);
         request.getPreferences().add(preferenceElement);
     }
@@ -325,9 +326,9 @@ public class AirShoppingRQBuilder {
 
     private void addTravelers() {
         for (Traveler t : anonymousTravelers.keySet()) {
-            org.iata.ndc.schema._2015_2.TravelersTraveler traveler = factory.createTravelersTraveler();
+            TravelersTraveler traveler = factory.createTravelersTraveler();
             traveler.setAnonymousTraveler(factory.createAnonymousTravelerType());
-            PTC ptc = factory.createTravelerCoreTypePTC();
+            TravelerCoreType.PTC ptc = factory.createTravelerCoreTypePTC();
             ptc.setValue(t.name());
             ptc.setQuantity(BigInteger.valueOf(anonymousTravelers.get(t)));
             traveler.getAnonymousTraveler().setPTC(ptc);

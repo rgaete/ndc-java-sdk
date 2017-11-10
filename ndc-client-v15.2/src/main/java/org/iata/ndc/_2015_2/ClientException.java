@@ -1,4 +1,4 @@
-package org.iata.ndc;
+package org.iata.ndc._2015_2;
 
 /**
  * Indicates serious error in the client.

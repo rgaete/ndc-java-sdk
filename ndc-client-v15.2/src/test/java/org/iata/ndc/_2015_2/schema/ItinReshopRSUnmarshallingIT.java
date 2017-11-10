@@ -1,4 +1,4 @@
-package org.iata.ndc.schema;
+package org.iata.ndc._2015_2.schema;
 
 import org.iata.ndc.schema._2015_2.ItinReshopRS;
 import org.junit.Test;
@@ -35,6 +35,6 @@ public class ItinReshopRSUnmarshallingIT extends AbstractUnmarshaller<ItinReshop
 	@Test
 	public void unmarshal() throws JAXBException {
 		ItinReshopRS itinReshopRS = unmarshal(resource);
-		assertEquals(OrderItemID, itinReshopRS.getResponse().getOrder().getOrderItems().get(0).getOrderItemID().value);
+		assertEquals(OrderItemID, itinReshopRS.getResponse().getOrder().getOrderItems().get(0).getOrderItemID().getValue());
 	}
 }

@@ -1,13 +1,14 @@
-package org.iata.ndc;
-
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.xml.bind.*;
+package org.iata.ndc._2015_2;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.impl.client.AbstractResponseHandler;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.IOException;
+import java.io.InputStream;
 
 class UnmarshallingResponseHandler<T> extends AbstractResponseHandler<T> implements ResponseHandler<T> {
 

@@ -1,4 +1,4 @@
-package org.iata.ndc.schema;
+package org.iata.ndc._2015_2.schema;
 
 import org.iata.ndc.schema._2015_2.FlightType;
 import org.iata.ndc.schema._2015_2.ItinReshopRQ;

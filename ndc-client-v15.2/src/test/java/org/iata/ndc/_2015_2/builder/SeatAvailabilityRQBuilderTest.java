@@ -1,9 +1,9 @@
-package org.iata.ndc.builder;
+package org.iata.ndc._2015_2.builder;
 
-import org.iata.ndc.schema.*;
-import org.iata.ndc.schema.DataListType.Flight;
-import org.iata.ndc.schema.MsgPartiesType.Participants;
-import org.iata.ndc.schema.MsgPartiesType.Participants.Participant;
+import org.iata.ndc.schema._2015_2.*;
+import org.iata.ndc.schema._2015_2.DataListType.Flight;
+import org.iata.ndc.schema._2015_2.MsgPartiesType.Participants;
+import org.iata.ndc.schema._2015_2.MsgPartiesType.Participants.Participant;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,15 +1,18 @@
-package org.iata.ndc.builder.element;
+package org.iata.ndc._2015_2.builder.element;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.iata.ndc.schema._2015_2.DataListType;
+import org.iata.ndc.schema._2015_2.DataListType.Flight;
+import org.iata.ndc.schema._2015_2.ListOfFlightSegmentType;
+import org.iata.ndc.schema._2015_2.ObjectFactory;
+import org.iata.ndc.schema._2015_2.OriginDestination;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.iata.ndc.schema.*;
-import org.iata.ndc.schema.DataListType.Flight;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class DataListBuilderTest {
 	private static final ObjectFactory factory = new ObjectFactory();

@@ -1,17 +1,17 @@
-package org.iata.ndc.schema;
+package org.iata.ndc._2015_2.schema;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import javax.xml.bind.JAXBException;
-
+import org.iata.ndc.schema._2015_2.ServicePriceRQ;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+
+import javax.xml.bind.JAXBException;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class ServicePriceRQUnmarshallingIT extends AbstractUnmarshaller<ServicePriceRQ> {

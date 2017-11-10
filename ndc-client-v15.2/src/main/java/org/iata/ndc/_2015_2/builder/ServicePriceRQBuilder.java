@@ -1,4 +1,4 @@
-package org.iata.ndc.builder;
+package org.iata.ndc._2015_2.builder;
 
 import org.iata.ndc.schema._2015_2.*;
 import org.iata.ndc.schema._2015_2.ShoppingResponseIDType.ResponseID;

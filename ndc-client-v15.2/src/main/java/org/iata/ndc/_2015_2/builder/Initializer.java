@@ -1,15 +1,14 @@
-package org.iata.ndc.builder;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.List;
+package org.iata.ndc._2015_2.builder;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.List;
 
 class Initializer {
 	private static final Class[] CLASSES_TO_SKIP = {

@@ -1,4 +1,4 @@
-package org.iata.ndc;
+package org.iata.ndc._2015_2;
 
 import org.apache.http.Consts;
 import org.apache.http.client.ClientProtocolException;

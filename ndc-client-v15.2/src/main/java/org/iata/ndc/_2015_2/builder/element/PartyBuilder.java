@@ -1,6 +1,10 @@
-package org.iata.ndc.builder.element;
+package org.iata.ndc._2015_2.builder.element;
 
-import org.iata.ndc.schema._2015_2.*;
+import org.iata.ndc.schema._2015_2.AgencyIDType;
+import org.iata.ndc.schema._2015_2.MsgPartiesType;
+import org.iata.ndc.schema._2015_2.ObjectFactory;
+import org.iata.ndc.schema._2015_2.TravelAgencySenderType;
+import org.iata.ndc.schema._2015_2.MsgPartiesType;
 
 /**
  * Creates new instance of MsgPartiesType.

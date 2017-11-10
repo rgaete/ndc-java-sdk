@@ -1,10 +1,7 @@
-package org.iata.ndc.builder.element;
+package org.iata.ndc._2015_2.builder.element;
 
 import org.iata.ndc.schema._2015_2.*;
-import org.iata.ndc.schema._2015_2.DataListType;
 import org.iata.ndc.schema._2015_2.DataListType.Flight;
-import org.iata.ndc.schema._2015_2.FlightCOSCoreType.Code;
-import org.iata.ndc.schema._2015_2.ObjectFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +77,7 @@ public class DataListBuilder {
 		//Updates flightSegments with
 		for (ListOfFlightSegmentType segment : listOfFlightSegments) {
 			FlightCOSCoreType classOfService = factory.createFlightCOSCoreType();
-			Code cosCode = factory.createFlightCOSCoreTypeCode();
+			FlightCOSCoreType.Code cosCode = factory.createFlightCOSCoreTypeCode();
 			cosCode.setValue(cabinCode);
 			classOfService.setCode(cosCode);
 			segment.setClassOfService(classOfService);

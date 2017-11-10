@@ -1,18 +1,18 @@
-package org.iata.ndc.schema;
+package org.iata.ndc._2015_2.schema;
 
-import static org.junit.Assert.assertEquals;
-
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.Collection;
-
-import javax.xml.bind.JAXBException;
-
+import org.iata.ndc.schema._2015_2.ServicePriceRS;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+
+import javax.xml.bind.JAXBException;
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class ServicePriceRSUnmarshallingIT extends AbstractUnmarshaller<ServicePriceRS> {
@@ -36,7 +36,7 @@ public class ServicePriceRSUnmarshallingIT extends AbstractUnmarshaller<ServiceP
 	@Test
 	public void unmarshal() throws JAXBException {
 		ServicePriceRS servicePriceRS = unmarshal(resource);
-		BigDecimal actual = servicePriceRS.getDataLists().getServiceList().get(0).getPrice().get(0).getTotal().value;
+		BigDecimal actual = servicePriceRS.getDataLists().getServiceList().get(0).getPrice().get(0).getTotal().getValue();
 		assertEquals(expectedAmount, actual);
 	}
 }

@@ -1,13 +1,12 @@
-package org.iata.ndc;
+package org.iata.ndc._2015_2;
 
-import org.iata.ndc.builder.AirShoppingRQBuilder;
-import org.iata.ndc.builder.SeatAvailabilityRQBuilder;
-import org.iata.ndc.builder.ServiceListRQBuilder;
-import org.iata.ndc.builder.ServicePriceRQBuilder;
-import org.iata.ndc.builder.element.DataListBuilder;
-import org.iata.ndc.builder.element.PartyBuilder;
+import org.iata.ndc._2015_2.builder.SeatAvailabilityRQBuilder;
+import org.iata.ndc._2015_2.builder.ServiceListRQBuilder;
+import org.iata.ndc._2015_2.builder.ServicePriceRQBuilder;
+import org.iata.ndc._2015_2.builder.element.DataListBuilder;
+import org.iata.ndc._2015_2.builder.element.PartyBuilder;
 import org.iata.ndc.schema._2015_2.*;
-import org.iata.ndc.schema._2015_2.AirShoppingRS.DataLists;
+import org.iata.ndc._2015_2.builder.AirShoppingRQBuilder;
 import org.iata.ndc.schema._2015_2.DataListType.Flight;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -109,7 +108,7 @@ public class NdcClientIT {
 
 	@Test
 	public void e_builtSeatAvailabilityRQ() {
-		DataLists lists = airSoppingRS.getDataLists();
+		AirShoppingRS.DataLists lists = airSoppingRS.getDataLists();
 		OriginDestination originDestination = lists.getOriginDestinationList().get(0);
 		Flight flight = DataListBuilder
 				.getObjectListFromReferenceList(originDestination.getFlightReferences().getValue(), Flight.class).get(0);
