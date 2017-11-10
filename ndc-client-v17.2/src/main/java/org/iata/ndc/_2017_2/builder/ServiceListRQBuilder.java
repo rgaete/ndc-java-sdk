@@ -1,6 +1,7 @@
-package org.iata.ndc._2015_2.builder;
+package org.iata.ndc._2017_2.builder;
 
-import org.iata.ndc.schema.ShoppingResponseIDType.ResponseID;
+import org.iata.ndc.schema._2017_2.*;
+import org.iata.ndc.schema._2017_2.ShoppingResponseIDType.ResponseID;
 
 public class ServiceListRQBuilder {
 	private static final ObjectFactory factory = new ObjectFactory();
@@ -33,11 +34,11 @@ public class ServiceListRQBuilder {
 	}
 
 	public ServiceListRQBuilder setShoppingResponseId(String shoppingResponseId) {
-		ShoppingResponseIDType shoppingResponseIDs = factory.createShoppingResponseIDType();
+		ShoppingResponseIDType shoppingResponseID = factory.createShoppingResponseIDType();
 		ResponseID responseID = factory.createShoppingResponseIDTypeResponseID();
 		responseID.setValue(shoppingResponseId);
-		shoppingResponseIDs.setResponseID(responseID);
-		request.setShoppingResponseIDs(shoppingResponseIDs);
+		shoppingResponseID.setResponseID(responseID);
+		request.setShoppingResponseID(shoppingResponseID);
 		return this;
 	}
 
